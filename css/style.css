@@ -158,3 +158,15 @@ h1 {
     color: yellow;
     text-shadow: 3px 3px 5px red;
 }
+
+h2, h3, h4, h5, h6 {
+  color: yellow;
+  text-shadow: 3px 3px 5px red;
+}
+
+p {
+  color: #ffd800;
+  text-shadow: 1px 1px 0 #ff0000;
+  font-size: 14px;
+  line-height: 1.5;
+}
