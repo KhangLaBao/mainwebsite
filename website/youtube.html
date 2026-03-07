@@ -31,7 +31,7 @@
       <nav>
         <ul class="nav-list">
           <li><a href="../index.html" class="nav-link">Home</a></li>
-          <li><a href="#" class="nav-link">Sign My Guestbook!</a></li>
+          <li><a href="guestbook.html" class="nav-link">Sign My Guestbook!</a></li>
           <li>
             <a href="https://kahng2000.neocities.org/" class="nav-link"
               >Visit my old Geocities page!</a
@@ -48,27 +48,43 @@
         The time is <span id="clock-text">00:00:00</span>!
       </div>
     </header>
-    <h2>Latest Broadcast</h2>
+    
 
-<div style="background:#330000;padding:10px;border:2px solid red;width:420px;">
-  
-    <p>Latest transmission from the channel:</p>
+<h1> Latest Boardcast Form My Channel!</h1>
+<img src="https://michaelmjd.neocities.org/images/youtube.gif">
+<h2>This list show 5 newest video from my channel!!!</h2>
 
-    <iframe
-    width="400"
-    height="225"
-    src="https://www.youtube.com/embed/videoseries?list=UUbQxddlD5tRrF2mgB_Cckjw"
-    frameborder="0"
-    allowfullscreen>
-    </iframe>
+<div id="videoList" style="background:#330000;border:2px solid red;padding:10px;width:420px;">
+Loading transmissions from bunker...
+</div>
 
-    <p style="font-size:12px;">
-    System automatically shows newest upload.
-    Approved by Rodent Administration.
-    </p>
+<script>
+fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=UCbQxddlD5tRrF2mgB_Cckjw"))
+.then(response => response.json())
+.then(data => {
 
-    </div>
-    <button class="glossy-button" onclick="location.href='../index.html'">Go back to main page</button>
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(data.contents, "text/xml");
+
+    const entries = xml.getElementsByTagName("entry");
+
+    let html = "<p><b>Latest transmissions:</b></p>";
+
+    for(let i=0; i<5; i++){   // show 5 newest videos
+        const title = entries[i].getElementsByTagName("title")[0].textContent;
+        const link = entries[i].getElementsByTagName("link")[0].getAttribute("href");
+
+        html += `<p>▶ <a href="${link}" target="_blank">${title}</a></p>`;
+    }
+
+    document.getElementById("videoList").innerHTML = html;
+
+});
+</script>
+
+
+
+<button class="glossy-button"onclick="window.open('https://www.youtube.com/channel/UCbQxddlD5tRrF2mgB_Cckjw','_blank')">My YouTube Channel!</button>  <button class="glossy-button" onclick="location.href='../index.html'">Go back to main page</button>
 </center>
       </body>
 </html>
