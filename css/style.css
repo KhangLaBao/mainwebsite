@@ -170,3 +170,23 @@ p {
   font-size: 14px;
   line-height: 1.5;
 }
+
+.rectangle-container {
+    width: 80%; /* Adjust width as needed */
+    max-width: 500px; /* Optional: set a maximum width */
+    margin: 50px auto; /* Centers the rectangle horizontally */
+    padding: 20px; /* Space between the border and the text inside */
+    border: 2px solid #ffee00e5; /* Creates the rectangle border */
+    background-color: rgb( 51, 0, 0); /* Optional: background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+}
+
+/* Optional: additional general styling for the text to ensure it looks good */
+/* If your h1, h2, and p are already fully styled, you can omit these. */
+h1, h2, p {
+    margin-bottom: 15px; /* Adds space between elements */
+}
+
+p:last-child, h2:last-child {
+    margin-bottom: 0; /* Removes extra space from the last element inside the container */
+}
