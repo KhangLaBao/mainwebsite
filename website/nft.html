@@ -32,39 +32,82 @@ BUY NOW
 </html>
 
 <style>
-    .glossy-button {
 
-  background-color: #2e8ece;
-  
+.glossy-button {
+    display: inline-block;
+    box-sizing: border-box;
 
-  background-image: linear-gradient(
-    to bottom, 
-    rgba(255, 255, 255, 0.5) 0%,  
-    rgba(255, 255, 255, 0.2) 50%, 
-    rgba(0, 0, 0, 0.1) 50%,       
-    rgba(0, 0, 0, 0.2) 100%        
-  );
+    padding: 10px 20px;
 
+    color: #fff;
+    font-family: "Magneto", cursive;
+    font-size: 14px;
+    font-weight: bold;
 
-  border-radius: 8px;
-  border: 1px solid #1a5a8a;
-  
+    text-align: center;
+    text-decoration: none;
 
-  box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.4), 
-    0 2px 4px rgba(0, 0, 0, 0.3);           
+    background: linear-gradient(
+        to bottom,
+        #7fc9ff 0%,
+        #3399e6 45%,
+        #1674c4 50%,
+        #0055a4 100%
+    );
 
+    border: 1px solid #00447f;
+    border-radius: 5px;
 
-  color: white;
-  font-weight: bold;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4); 
-  padding: 10px 20px;
-  cursor: pointer;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.75),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+        0 2px 4px rgba(0, 0, 0, 0.3);
+
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
 }
 
 .glossy-button:hover {
-  background-color: #3ca0e6;
-  filter: brightness(1.1);
+    color: #fff;
+
+    background: linear-gradient(
+        to bottom,
+        #a4dcff 0%,
+        #51b0f5 45%,
+        #2588d6 50%,
+        #0866b5 100%
+    );
+
+    filter: brightness(1.05);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 0 6px rgba(51, 153, 230, 0.6),
+        0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.glossy-button:active {
+    background: linear-gradient(
+        to bottom,
+        #0055a4,
+        #1674c4
+    );
+
+    box-shadow:
+        inset 0 2px 5px rgba(0, 0, 0, 0.4);
+
+    transform: translateY(1px);
+}
+
+.glossy-button:focus-visible {
+    outline: 2px solid #ffdf45;
+    outline-offset: 3px;
 }
 
 
